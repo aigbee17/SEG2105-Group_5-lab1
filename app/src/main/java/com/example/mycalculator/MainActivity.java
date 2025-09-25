@@ -1,3 +1,5 @@
+//Group5 SEG 2105 Jacob, Karan, Ehi
+
 package com.example.mycalculator;
 import net.objecthunter.exp4j.Expression;
 import net.objecthunter.exp4j.ExpressionBuilder;
@@ -11,6 +13,8 @@ import android.widget.TextView;
 
 import java.math.BigDecimal;
 
+//import javax.script.ScriptEngine;
+//import javax.script.ScriptEngineManager;
 
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
@@ -19,10 +23,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     // This is to evaluate the math expression
 
+    //ScriptEngine engine;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        //engine = new ScriptEngineManager().getEngineByName("rhino");
 
 
         btn1 = (Button) findViewById(R.id.btn1);
@@ -58,7 +65,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.btn_equal:
                 String result = null;
                 try {
-                    result = evaluate(text_display.getText().toString());
+                     result = evaluate(text_display.getText().toString());
                     text_display.setText(result);
                 } catch (Exception e) {
                     text_display.setText("Error");
