@@ -78,9 +78,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     private String evaluate(String expression) throws Exception {
-        String result = evaluate(expression);
-        BigDecimal decimal = new BigDecimal(result);
-        return decimal.setScale(2, BigDecimal.ROUND_HALF_UP).toPlainString();
+        Expression exp = new ExpressionBuilder(expression).build();
+        double value = exp.evaluate();
+        BigDecimal decimal = new BigDecimal(value).stripTrailingZeros();
+        return decimal.setScale(0, BigDecimal.ROUND_HALF_UP).toPlainString();
     }
 
     private void addNumber(String number) {
