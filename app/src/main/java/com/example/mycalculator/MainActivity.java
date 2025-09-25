@@ -13,8 +13,8 @@ import android.widget.TextView;
 
 import java.math.BigDecimal;
 
-import javax.script.ScriptEngine;
-import javax.script.ScriptEngineManager;
+//import javax.script.ScriptEngine;
+//import javax.script.ScriptEngineManager;
 
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
@@ -23,12 +23,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     // This is to evaluate the math expression
 
-    ScriptEngine engine;
+    //ScriptEngine engine;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        engine = new ScriptEngineManager().getEngineByName("rhino");
+        //engine = new ScriptEngineManager().getEngineByName("rhino");
 
 
         btn1 = (Button) findViewById(R.id.btn1);
@@ -62,8 +63,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 addNumber("+");
                 break;
             case R.id.btn_equal:
+                String result = null;
                 try {
-                    String result = evaluate(text_display.getText().toString());
+                     result = evaluate(text_display.getText().toString());
                     text_display.setText(result);
                 } catch (Exception e) {
                     text_display.setText("Error");
