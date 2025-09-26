@@ -56,6 +56,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
+
+            case R.id.btn0:
+                addNumber("0");
+                break;
             case R.id.btn1:
                 addNumber("1");
                 break;
