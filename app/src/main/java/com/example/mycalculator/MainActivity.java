@@ -75,10 +75,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
-
-            case R.id.btn0:
-                addNumber("0");
-                break;
             case R.id.btn1:
                 addNumber("1");
                 break;
@@ -86,15 +82,62 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 addNumber("2");
                 break;
 
+            case R.id.btn3:
+                addNumber("3");
+                break;
+
+            case R.id.button4:
+                addNumber("4");
+                break;
+
+            case R.id.button5:
+                addNumber("5");
+                break;
+
+            case R.id.button6:
+                addNumber("6");
+                break;
+
+            case R.id.button7:
+                addNumber("7");
+                break;
+
+            case R.id.button8:
+                addNumber("8");
+                break;
+
+            case R.id.button9:
+                addNumber("9");
+                break;
+
+            case R.id.btn0:
+                addNumber("0");
+                break;
+
+
 
             case R.id.btn_plus:
                 addNumber("+");
                 break;
 
+            case R.id.btn_mul:
+                addNumber("*");
+                break;
+
+            case R.id.btn_div:
+                addNumber("/");
+                break;
+
+
+            case R.id.btn_sub:
+                addNumber("-");
+                break;
+
+
             case R.id.btn_equal:
                 String result = null;
                 try {
-                     result = evaluate(text_display.getText().toString());
+                    result = evaluate(text_display.getText().toString());
                     text_display.setText(result);
                 } catch (Exception e) {
                     text_display.setText("Error");
