@@ -18,7 +18,7 @@ import java.math.BigDecimal;
 
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
-    Button btn0, btn1, btn2, btn_clear, btn_plus, btn_equal;
+    Button btn0, btn1, btn2, btn3, button4, button5, button6, button7, button8, button9, btn_clear, btn_plus, btn_equal, btn_mul, btn_div, btn_sub;
     TextView text_display;
 
     // This is to evaluate the math expression
@@ -34,11 +34,20 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         btn0 = (Button) findViewById(R.id.btn0);
         btn1 = (Button) findViewById(R.id.btn1);
         btn2 = (Button) findViewById(R.id.btn2);
+        btn3 = (Button) findViewById(R.id.btn3);
+        button4 = (Button) findViewById(R.id.button4);
+        button5 = (Button) findViewById(R.id.button5);
+        button6 = (Button) findViewById(R.id.button6);
+        button7 = (Button) findViewById(R.id.button7);
+        button8 = (Button) findViewById(R.id.button8);
+        button9 = (Button) findViewById(R.id.button9);
         btn_plus = (Button) findViewById(R.id.btn_plus);
         btn_equal = (Button) findViewById(R.id.btn_equal);
         btn_clear = (Button) findViewById(R.id.btn_clear);
         text_display = (TextView) findViewById(R.id.textview_input_display);
-
+        btn_mul = (Button) findViewById(R.id.btn_mul);
+        btn_div = (Button) findViewById(R.id.btn_div);
+        btn_sub = (Button) findViewById(R.id.btn_sub);
 
 
         setClickListeners();
@@ -48,9 +57,19 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         btn0.setOnClickListener(this);
         btn1.setOnClickListener(this);
         btn2.setOnClickListener(this);
+        btn3.setOnClickListener(this);
+        button4.setOnClickListener(this);
+        button5.setOnClickListener(this);
+        button6.setOnClickListener(this);
+        button7.setOnClickListener(this);
+        button8.setOnClickListener(this);
+        button9.setOnClickListener(this);
         btn_plus.setOnClickListener(this);
         btn_equal.setOnClickListener(this);
         btn_clear.setOnClickListener(this);
+        btn_mul.setOnClickListener(this);
+        btn_div.setOnClickListener(this);
+        btn_sub.setOnClickListener(this);
     }
 
     @Override
