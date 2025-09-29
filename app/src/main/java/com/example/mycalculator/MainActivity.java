@@ -13,12 +13,11 @@ import android.widget.TextView;
 
 import java.math.BigDecimal;
 
-//import javax.script.ScriptEngine;
-//import javax.script.ScriptEngineManager;
+
 
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
-    Button btn0, btn1, btn2, btn3, button4, button5, button6, button7, button8, button9, btn_clear, btn_plus, btn_equal, btn_mul, btn_div, btn_sub;
+    Button btn0, btn1, btn2, btn3, button4, button5, button6, button7, button8, button9, btn_clear, btn_plus, btn_equal, btn_mul, btn_div, btn_sub, btn_dot;
     TextView text_display;
 
     // This is to evaluate the math expression
@@ -48,6 +47,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         btn_mul = (Button) findViewById(R.id.btn_mul);
         btn_div = (Button) findViewById(R.id.btn_div);
         btn_sub = (Button) findViewById(R.id.btn_sub);
+        btn_dot = (Button) findViewById(R.id.btn_dot);
 
 
         setClickListeners();
@@ -70,6 +70,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         btn_mul.setOnClickListener(this);
         btn_div.setOnClickListener(this);
         btn_sub.setOnClickListener(this);
+        btn_dot.setOnClickListener(this);
     }
 
     @Override
@@ -133,6 +134,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 addNumber("-");
                 break;
 
+            case R.id.btn_dot:
+                addNumber(".");
+                break;
+
 
             case R.id.btn_equal:
                 String result = null;
@@ -152,14 +157,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private String evaluate(String expression) throws Exception {
         Expression exp = new ExpressionBuilder(expression).build();
         double value = exp.evaluate();
-        BigDecimal decimal = new BigDecimal(value).stripTrailingZeros();
-        if (value <1){
-            return decimal.setScale(1, BigDecimal.ROUND_HALF_UP).toPlainString();
-        }else {
-            return decimal.setScale(0, BigDecimal.ROUND_HALF_UP).toPlainString();
+        BigDecimal decimal = BigDecimal.valueOf(value).stripTrailingZeros();
 
-        }
-
+    return decimal.toPlainString();
     }
 
     private void addNumber(String number) {
